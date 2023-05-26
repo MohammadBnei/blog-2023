@@ -45,7 +45,7 @@ There is a set of packages to automatically add opentelemtry to any nestjs appli
 
 They all start with '@opentelemetry', and they inject themselves in the rest/gRPC/GraphQL processes. That is why they have to be called before anything else.
 
-You can look at the [task-api tracing file](../task-api/src/config/tracing.ts) to have an example. Here, we only implement tracing export and logging trace injection.
+You can look at the [task-api tracing file](https://github.com/MohammadBnei/grpc-task-manager/blob/main/auth-api/src/config/tracing.ts) to have an example. Here, we only implement tracing export and logging trace injection.
 
 So, when our apis are communication with each other, the calls are registered and sent to a collector. This collector is responsible for understanding the informations, linking request together (from the original sender to the final response, tracing hops between apis) and showing us the result in multiple forms (diagrams, schemes, timetable...).
 
