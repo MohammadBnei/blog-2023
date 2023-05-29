@@ -26,18 +26,18 @@ The project also features SSL configuration using mkcert and includes an example
 
 For all of the tutorials, you will need to have setup the project and finished the [readme](https://github.com/MohammadBnei/grpc-task-manager/blob/main/Readme.md).
 
-## 1 Creation of a nestjs grpc api
+## 1 - Creation of a nestjs grpc api
 [NestJS gRPC](/microservices/1-nestjs-grpc)
 
 
 [Generate Stub](/microservices/generate-proto)
 
-## 2 Connecting to a gRPC microservice
+## 2 - Connecting to a gRPC microservice
 [Connect to](/microservices/2-connect-ms)
 
-## 3 Setting up env conf & health checks
+## 3 - Setting up env conf & health checks
 [Conf & Health checks](/microservices/3-nestjs-conf-health)
 
 
-## 4 Adding observability
+## 4 - Adding observability
 [Observability](/microservices/observability)
