@@ -27,7 +27,7 @@ API routes are routes that handle server-side requests and send responses in the
 
 SvelteKit uses a Node.js server, which is responsible for handling the incoming requests and responses. The server is also responsible for handling dynamic routes and applying middleware to modify requests or responses. SvelteKit provides an easy-to-use API for handling server-side functionality, making it simple and intuitive to build fast and efficient web applications.
 
-This Node.js server will be used in this project to handle the **protocol transcription**: gRPC <-> REST
+This Node.js server will be used in this project to handle the **protocol transcription**: gRPC ↔ REST
 
 ### Server Hook
 
@@ -52,7 +52,7 @@ The `src/router` folder is where you will place your pages and API route handler
 
 ### Initialize gRPC Client
 
-First, we need to generate the client stub for our SvelteKit app. Go to [`proto/buf.gen.yml`](/proto/buf.gen.yaml) and add the following line to the plugin list:
+First, we need to generate the client stub for our SvelteKit app. Go to `proto/buf.gen.yml` (at the root of the project) and add the following line to the plugin list:
 
 ```yml
   - plugin: buf.build/community/timostamm-protobuf-ts
@@ -63,15 +63,15 @@ Then, run `buf generate` to generate the stubs. We don't need the proto file. Yo
 
 The following libraries need to be installed:
 
-```sh
-npm install -D @grpc/grpc-js @protobuf-ts/runtime-rpc @protobuf-ts/runtime @protobuf-ts/grpc-transport
+```bash
+$ npm install -D @grpc/grpc-js @protobuf-ts/runtime-rpc @protobuf-ts/runtime @protobuf-ts/grpc-transport
 ```
 
 Let's start implementing the connection to the gRPC servers.
 
 Create a `lib/server/grpc.client.ts` file. We need to create a credentials object:
 
-```ts
+```typescript
 import { GrpcTransport } from '@protobuf-ts/grpc-transport';
 import { ChannelCredentials } from '@grpc/grpc-js';
 
@@ -82,7 +82,7 @@ In production mode, these credentials will be using SSL. For now, we'll use inse
 
 Next, we will initialize the connection:
 
-```ts
+```typescript
 import { env } from '$env/dynamic/private';
 import { UserServiceClient } from '$lib/stubs/user/v1alpha/service.client';
 
@@ -94,7 +94,7 @@ const userTransport = new GrpcTransport({
 
 And finally, the instantiated service:
 
-```ts
+```typescript
 import { UserServiceClient } from '$lib/stubs/user/v1alpha/service.client';
 
 export const userClient = new UserServiceClient(userTransport);
@@ -110,7 +110,7 @@ From now on, things will be easy. We simply need to call our APIs with the insta
 
 In `src/routes/user/+server.ts`, we will demonstrate how to convert a gRPC answer to a REST response. Write the following:
 
-```ts
+```typescript
 import { userClient } from '$lib/server/grpc.client';
 import type { RequestHandler } from '@sveltejs/kit';
 
@@ -128,33 +128,33 @@ export const POST: RequestHandler = async ({ request }) => {
 ```
 
 Start the user api insecurely :
-```sh
+```bash
 # In the user-api folder
-insecure=true npm start
+$ insecure=true npm start
 ```
 
 Add a .env to inject the user-api url :
-```sh
+```bash
 # Don't forget to modify with your local url ;)
-USER_API_URL=localhost:6000
+$ USER_API_URL=localhost:6000
 ``` 
 
 Start the sveltekit server :
-```sh
-npm run dev
+```bash
+$ npm run dev
 ```
 
 If all went smoothly, you should be able to test your REST endpoint with the following cURL (or with postman):
-```sh
-curl -X POST \
+```bash
+$ curl -X POST \
   http://localhost:5173/user \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "email": "johndoe@example.com",
-  "password": "password123",
-  "firstName": "John",
-  "lastName": "Doe"
-}'
+    -H 'Content-Type: application/json' \
+    -d '{
+      "email": "johndoe@example.com",
+      "password": "password123",
+      "firstName": "John",
+      "lastName": "Doe"
+    }'
 ```
 
 ### Real front end
