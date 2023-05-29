@@ -1,13 +1,11 @@
 ---
-title: Microservice Course
+title: Front End with SvelteKit
 created: 2023-05-26
 tags:
   - sveltekit
   - nodejs
   - microservices
 ---
-
-# Front End with SvelteKit
 
 ## SSR
 
