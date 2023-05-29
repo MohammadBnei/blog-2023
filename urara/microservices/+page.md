@@ -35,6 +35,9 @@ For all of the tutorials, you will need to have setup the project and finished t
 ## 2 Connecting to a gRPC microservice
 [Connect to](/microservices/2-connect-ms)
 
+## 3 Setting up env conf & health checks
+[Conf & Health checks](/microservices/3-nestjs-conf-health)
 
-## 3 Adding observability
+
+## 4 Adding observability
 [Observability](/microservices/observability)
