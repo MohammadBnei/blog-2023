@@ -41,3 +41,6 @@ For all of the tutorials, you will need to have setup the project and finished t
 
 ## 4 - Adding observability
 [Observability](/microservices/observability)
+
+## Front-End
+[SSR implementation tutorial](/microservices/ssr-sveltekit)
