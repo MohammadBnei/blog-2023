@@ -58,6 +58,10 @@ export const header: HeaderConfig = {
     {
       text: 'Microservices',
       link: '/microservices'
+    },
+    {
+      text: 'CLI Tools',
+      link: '/cli-tools'
     }
   ]
 }

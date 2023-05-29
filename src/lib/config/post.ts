@@ -13,5 +13,6 @@ export const post: PostConfig = {
       lang: 'en',
       loading: 'lazy'
     }
-  }
+  },
+  
 }
