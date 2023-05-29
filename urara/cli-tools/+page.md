@@ -1,4 +1,11 @@
-# CLI Tools
+---
+title: CLI Tools
+created: 2023-05-29
+tags:
+  - golang
+  - cli
+  - ai
+---
 
 Overall, CLI tools play a significant role in enhancing productivity, improving workflows, and offering a more efficient way of interacting with systems and applications. Go-OpenAI-cli is a valuable addition to the collection of CLI tools, and it provides an easy way to generate text using OpenAI's GPT-3 language generation service.
 
