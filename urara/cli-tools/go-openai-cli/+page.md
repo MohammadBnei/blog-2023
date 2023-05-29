@@ -7,6 +7,8 @@ tags:
   - ai
 ---
 
+As CLI tools gain popularity, more developers are creating new and innovative CLI applications that cater to specific needs. Go-OpenAI-cli is one such tool that enables users to generate text using OpenAI's GPT-3 language generation service from the command line. This article provides a detailed guide on how to install and use Go-OpenAI-cli, including configuration and usage, as well as the available commands within the prompt. Additionally, the article offers guidelines on how to contribute to the development of Go-OpenAI-cli and outlines its licensing under the MIT License. 
+
 [Github Repo](https://github.com/MohammadBnei/go-openai-cli/tree/main)
 
 Go-OpenAI-CLI is a command-line interface that provides access to OpenAI's GPT-3 language generation service. With this tool, users can send a prompt to the OpenAI API and receive a generated response, which can then be printed on the command-line or saved to a markdown file. 
