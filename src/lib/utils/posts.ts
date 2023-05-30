@@ -80,5 +80,5 @@ export const genPosts: GenPostsFunction = ({
  * @returns - tags list
  */
 export const genTags: GenTagsFunction = posts => [
-  ...new Set(posts.reduce((acc, posts) => (posts.tags ? [...acc, ...posts.tags] : acc), ['']).slice(1))
+  ...new Set(posts?.reduce((acc, posts) => (posts.tags ? [...acc, ...posts.tags] : acc), ['']).slice(1))
 ]

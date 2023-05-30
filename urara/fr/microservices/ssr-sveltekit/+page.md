@@ -1,5 +1,5 @@
 ---
-titre: Front-end avec SvelteKit
+title: Front-end avec SvelteKit
 créé: 2023-05-26
 tags:
   - sveltekit
