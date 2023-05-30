@@ -8,8 +8,6 @@ tags:
   - microservices
 ---
 
-# Tutoriel NestJS gRPC 
-
 Dans ce tutoriel, nous allons construire un service gRPC en NestJS, implémentant des opérations CRUD pour une entité Héro.
 
 ## Prérequis

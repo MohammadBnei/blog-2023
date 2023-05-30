@@ -7,8 +7,6 @@ tags:
   - microservices
 ---
 
-# Tutoriel guidé NestJS Conf & santé
-
 ## Prérequis
 
 - Avoir terminé [ce tutoriel](/fr/microservices/2-connect-ms)

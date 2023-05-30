@@ -8,8 +8,6 @@ tags:
   - jaeger
 ---
 
-# Observabilité
-
 Pour comprendre ce qui se passe dans notre microcosme de microservices, nous avons besoin d'implémenter l'observabilité. Il y a 3 types d'éléments que nous voulons observer :
  - **Tracing**. Cela est utile pour voir l'architecture globale en suivant les requêtes d'un API à l'autre. Nous pouvons alors créer des schémas et des diagrammes en temps réel.
  - **Metrics**. Comment nos APIs se comportent-elles ? Où sont les goulets d'étranglement ? Il est utile d'avoir des métriques pour la performance, bien sûr, et pour comprendre où nous devrions concentrer nos efforts.
@@ -69,7 +67,7 @@ Ces packages sont nécessaires pour ajouter l'observabilité OpenTelemetry à l'
 ### Étape 2 : Ajouter le tracing OpenTelemetry à l'application NestJS
 Dans le fichier `tracing.ts`, nous définissons le `NodeTracerProvider` avec une resource qui identifie le nom et la version de notre service. De plus, nous ajoutons le `SimpleSpanProcessor` et l'`OTLPTraceExporter` pour envoyer nos données de traçage au backend Jaeger qui s'exécute sur `http://localhost:4318/v1/traces`. Nous ajoutons également l'instrumentation pour Winston et gRPC via la méthode `registerInstrumentations()` fournie par le SDK OpenTelemetry. 
 
-```ts
+```typescript
 import { SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
 import { GrpcInstrumentation } from '@opentelemetry/instrumentation-grpc';
@@ -114,7 +112,9 @@ $ docker compose up -d tracing
 ### Étape 5: Démarrer l'API
 Lancez votre API, puis effectuez quelques requêtes depuis Postman. Ensuite, rendez-vous sur http://localhost:16686 pour accéder à l'interface utilisateur du collecteur. Vous devriez voir le nom de votre API dans le menu déroulant "service".
 
+
 ### Étape 6: Ajout d'instrumentation
 Consultez [ici](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/node) la liste complète des instrumentation Node.js. Choisissez celui correspondant à votre base de données et ajoutez-le au fichier `tracing.ts`.
+
 ### Conclusion
 L'ajout de l'observabilité OpenTelemetry à une API NestJS gRPC est une tâche essentielle. Dans ce tutoriel, nous avons appris comment configurer le traçage OpenTelemetry avec NestJS et gRPC en utilisant le SDK Node.js OpenTelemetry et le backend Jaeger. Avec cette configuration, nous pouvons obtenir une meilleure compréhension de notre API NestJS gRPC et améliorer les performances et la fiabilité globales.

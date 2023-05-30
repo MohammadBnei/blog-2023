@@ -8,8 +8,6 @@ tags:
   - microservices
 ---
 
-# Implémentation d'un client gRPC dans NestJS
-
 gRPC est un protocole léger et performant permettant de construire des systèmes distribués, et NestJS est un framework Node.js progressif pour la construction d'applications web rapides, efficaces et maintenables. En intégrant gRPC avec NestJS, nous pouvons créer des microservices qui peuvent communiquer entre eux de manière efficace. Dans ce tutoriel, nous verrons comment implémenter un client gRPC dans NestJS.
 
 ## Prérequis
