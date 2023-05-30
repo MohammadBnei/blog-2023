@@ -10,6 +10,7 @@
   import Transition from '$lib/components/transition.svelte'
   import 'uno.css'
   import '../app.pcss'
+  import { lang } from '$lib/stores/lang'
 
   export let data: LayoutData
 
@@ -17,7 +18,13 @@
 
   $: if (data) path = data.path
 
-  posts.set(res)
+  $: if ($lang === 'fr') {
+    console.log({ lang: $lang })
+    posts.set((res as Urara.Post[]).filter(p => p.slug.split('/').some(s => s === 'fr')))
+  } else {
+    posts.set((res as Urara.Post[]).filter(p => !p.slug.split('/').some(s => s === 'fr')))
+  }
+
   tags.set(genTags(res))
   onMount(
     () =>

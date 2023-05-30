@@ -8,6 +8,7 @@
   import { hslToHex } from '$lib/utils/color'
   import Nav from '$lib/components/header_nav.svelte'
   import Search from '$lib/components/header_search.svelte'
+  import { lang } from '$lib/stores/lang'
   export let path: string
   let title: string
   let currentTheme: string
@@ -70,6 +71,15 @@
             <span class="i-heroicons-outline-search" />
           </button>
         {/if}
+        <div class="flex justify-center gap-1 items-center">
+          🇬🇧
+          <input
+            type="checkbox"
+            class="toggle toggle-sm"
+            checked={$lang === 'fr'}
+            on:change={() => ($lang = $lang === 'en' ? 'fr' : 'en')} />
+          🇫🇷
+        </div>
         <div id="change-theme" class="dropdown dropdown-end">
           <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
           <!-- reference: https://github.com/saadeghi/daisyui/issues/1285 -->

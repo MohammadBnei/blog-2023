@@ -69,8 +69,6 @@ These packages are needed for adding OpenTelemetry observability to NestJS gRPC 
 ### Step 2: Add OpenTelemetry tracing to the NestJS app
 In the `tracing.ts` file, we define the `NodeTracerProvider` with a resource that will identify our service name and service version. Additionally, we add the `SimpleSpanProcessor` and `OTLPTraceExporter` to send our trace data to the Jaeger backend running on `http://localhost:4318/v1/traces`. We also add instrumentation for Winston and gRPC via the `registerInstrumentations()` method that comes with the OpenTelemetry SDK. 
 
-Certainly! Here's a breakdown of each section of the code snippet:
-
 ```ts
 import { SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';

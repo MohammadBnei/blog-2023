@@ -39,8 +39,8 @@ For all of the tutorials, you will need to have setup the project and finished t
 [Conf & Health checks](/microservices/3-nestjs-conf-health)
 
 
-## 4 - Adding observability
-[Observability](/microservices/observability)
+## Observability
+[Adding Observability](/microservices/observability)
 
 ## Front-End
 [SSR implementation tutorial](/microservices/ssr-sveltekit)
