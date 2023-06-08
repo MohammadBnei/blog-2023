@@ -280,6 +280,20 @@ export const grpcConfig = addReflectionToGrpcConfig({
 
 This options are mandatory in nestjs, while the grpc-reflection package is a helper for postman.
 
+You have one important thing to do when using proto files in NestJS. You must tell the nest cli to include `proto` files in the build folder. To do that, add the following configuration to `nest-cli.json` :
+```json
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  // New compiler options
+  "compilerOptions": {
+    "assets": [
+      "**/*.proto"
+    ],
+    "watchAssets": true
+  }
+}
+```
 ## Starting the gRPC Server
 
 We'll start the gRPC server in the `main.ts` file using the `NestFactory.createMicroservice` method and passing it the `grpcConfig` we just defined.

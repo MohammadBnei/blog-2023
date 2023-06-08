@@ -1,6 +1,7 @@
 ---
 title: How to generate stubs
 created: 2023-05-23
+published: 2023-05-25
 tags:
   - nestjs
   - gRPC
