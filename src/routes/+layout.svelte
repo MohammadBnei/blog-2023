@@ -19,7 +19,6 @@
   $: if (data) path = data.path
 
   $: if ($lang === 'fr') {
-    console.log({ lang: $lang })
     posts.set((res as Urara.Post[]).filter(p => p.slug.split('/').some(s => s === 'fr')))
   } else {
     posts.set((res as Urara.Post[]).filter(p => !p.slug.split('/').some(s => s === 'fr')))
