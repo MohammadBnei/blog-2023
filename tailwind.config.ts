@@ -8,5 +8,10 @@ export default {
   content: ['./src/**/*.{html,md,js,svelte,ts}'],
   theme: { extend: {} },
   plugins: [typography, daisyui],
-  daisyui: { themes: theme.map(({ name }) => name) }
+  daisyui: { themes: theme.map(({ name }) => name) },
+  variants: {
+    extend: {
+      child: '& > *',
+    },
+  },
 }
