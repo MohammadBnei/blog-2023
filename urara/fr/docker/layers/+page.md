@@ -1,7 +1,7 @@
 ---
-titre : Couches Docker
-créé : 2023-07-22
-tags :
+title: Docker Layers
+created: 2023-07-22
+tags:
   - docker
   - cours
 ---
@@ -18,7 +18,7 @@ Au niveau le plus simple, une couche Docker est une différence dans le système
 
 Les images sont en lecture seule. Lorsque vous exécutez une image et créez un conteneur, Docker ajoute une couche en lecture-écriture (souvent appelée **"container layer"**). Toute modification du conteneur qui affecte le système de fichiers, comme la création ou la modification de fichiers, est écrite dans cette fine couche de conteneur inscriptible.
 
-``docker run -it ubuntu bash````
+```docker run -it ubuntu bash```
 
 Dans la commande ci-dessus, `ubuntu` est l'image, et la commande `bash` que nous exécutons crée une nouvelle couche au-dessus d'elle. Tous les changements effectués pendant l'exécution de cette commande sont sauvegardés dans cette nouvelle couche.
 

@@ -1,7 +1,7 @@
 ---
-titre : Entrypoint Docker
-créé : 2023-07-22
-tags :
+title: Docker Entrypoint
+created: 2023-07-22
+tags:
   - docker
   - cours
 ---
@@ -44,7 +44,7 @@ La syntaxe des deux commandes peut être soit une forme shell, soit une forme ex
 <summary class="font-bold cursor-pointer -ml-4">Plus d'informations sur les formes shell et exec</summary>
 Dans les instructions ENTRYPOINT et CMD de Docker, deux formes peuvent être utilisées - la forme Shell ou la forme Exec.
 
-- **Forme Shell** :
+- **Shell Form** :
 
   La forme shell est spécifiée sans l'utilisation de crochets. Elle utilise l'interpréteur de commandes pour exécuter la commande, ce qui se traduit par `/bin/sh -c votre_commande`. Cette forme initie un nouveau processus shell, qui est légèrement plus gourmand en ressources que la forme exec.
 
@@ -88,7 +88,6 @@ Par conséquent, à moins qu'il n'y ait un besoin spécifique d'utiliser la form
 </details>
 
 Veuillez noter que les paramètres CMD dans la forme exec seront généralement utilisés comme paramètres supplémentaires dans la commande ENTRYPOINT si ENTRYPOINT est spécifié.
-</details>
 
 Lorsque la commande et les arguments sont spécifiés sans crochets `[]`, ils sont traités via `/bin/sh -c`.
 
@@ -106,8 +105,7 @@ Lorsque la commande et les arguments sont spécifiés sans crochets `[]`, ils so
 
 De plus, il est important de noter que `CMD` fournira des arguments à `ENTRYPOINT` et ceux-ci seront écrasés si le conteneur docker est exécuté avec d'autres arguments de ligne de commande.
 
-Par exemple, `docker run -it
-`docker run -it <image> /bin/bash`
+Par exemple, `docker run -it <image> /bin/bash`
 
 Dans cette commande, `/bin/bash` remplacera `['arg1', 'arg2']` dans `CMD`.
 

@@ -51,7 +51,7 @@ In Exercise 1, you'll use the `ARG` command to specify the Python version during
 1. Create a new file and name it Dockerfile.
 2. Add the line `ARG version` to start your Dockerfile. This line sets up a build-time variable which will allow you to specify the version of Python for your Docker image.
 3. On a new line, add `FROM python:$version`. This line pulls the Python docker image of the version you specified, creating the possibility to customize the base image version at build time.
-4. Then, add the line `ADD https://bnei.dev/assets/flag/data.txt /data/sampledata.txt`. This command will download a text file from a URL and add it to the /data directory in your Docker image.
+4. Then, add the line `ADD https://bnei.dev/assets/docker/flag/data.txt /data/sampledata.txt`. This command will download a text file from a URL and add it to the /data directory in your Docker image.
 
 Now, you can use the `--build-arg` flag when building the Docker image to specify the Python version. For example, use the command `docker build --build-arg version=3.9 -t my-python-app .` to build your Docker image using Python 3.9 as the base image. This Docker image also contains `sampledata.txt` file in the `/data` directory, obtained from a URL. 
 
@@ -102,7 +102,7 @@ The solution to these commands in a Dockerfile would be as follows:
 ```Dockerfile
 ARG version
 FROM python:$version
-ADD https://bnei.dev/assets/flag/data.txt /data/sampledata.txt
+ADD https://bnei.dev/assets/docker/flag/data.txt /data/sampledata.txt
 ```
 With these lines:
 - You can specify Python version using the `--build-arg version=3.9` flag while building the Docker image.
@@ -160,7 +160,7 @@ Pulling all these instructions together, our final Dockerfile looks like this:
 ```Dockerfile
 ARG version
 FROM python:$version
-ADD https://bnei.dev/assets/flag/data.txt /data/sampledata.txt
+ADD https://bnei.dev/assets/docker/flag/data.txt /data/sampledata.txt
 WORKDIR /src
 COPY ./app /src
 EXPOSE 8080

@@ -1,6 +1,6 @@
 ---
 title: Front-end avec SvelteKit
-créé: 2023-05-26
+created: 2023-05-26
 tags:
   - sveltekit
   - nodejs

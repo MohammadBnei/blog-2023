@@ -1,12 +1,12 @@
 ---
-titre : Flags Docker
-créé : 2023-07-22
-tags :
+title: Docker Flags
+created: 2023-07-22
+tags:
   - docker
   - cours
 ---
 
-# Flags Docker
+# Docker Flags
 
 En plus des commandes avancées de Docker mentionnées ci-dessus, voici les commandes fondamentales que vous êtes susceptible d'utiliser fréquemment :
 

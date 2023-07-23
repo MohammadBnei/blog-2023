@@ -84,7 +84,7 @@ export const footer: FooterConfig = {
 }
 
 export const date: DateConfig = {
-  locales: 'fr-FR',
+  locales: 'en',
   options: {
     year: '2-digit',
     weekday: 'long',
