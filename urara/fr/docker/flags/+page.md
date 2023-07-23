@@ -178,4 +178,4 @@ Avec l'exemple ci-dessus, `make /app` sera déclenché lorsqu'une image qui util
 
 Ces drapeaux Docker sont des utilitaires puissants pour définir et contrôler le processus de construction de Docker et l'exécution des conteneurs. Ils offrent beaucoup de flexibilité et de contrôle dans vos flux de travail Docker.
 
-[Exercices (EN)](/fr/docker/flags/exercice)
+[Exercices (EN)](/docker/flags/exercice)

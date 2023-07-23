@@ -56,4 +56,4 @@ Exemple de démonstration : Si vous avez deux Dockerfiles différents, tous deux
 
 Exemple de réfutation : Si vous avez deux Dockerfiles mais que l'un utilise `FROM python:3.8` et l'autre `FROM python:3.9`, ces couches ne peuvent pas être partagées car elles utilisent des images de base différentes.
 
-[Exercices (EN)](/fr/docker/layers/exercice)
+[Exercices (EN)](/docker/layers/exercice)
