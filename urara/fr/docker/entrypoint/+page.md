@@ -111,4 +111,4 @@ Par exemple, `docker run -it
 
 Dans cette commande, `/bin/bash` remplacera `['arg1', 'arg2']` dans `CMD`.
 
-[Exercices (EN)](/fr/docker/entrypoint/exercice)
+[Exercices (EN)](/docker/entrypoint/exercice)
