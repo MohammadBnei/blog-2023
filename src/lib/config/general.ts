@@ -60,6 +60,10 @@ export const header: HeaderConfig = {
       link: '/microservices'
     },
     {
+      text: 'Docker',
+      link: '/docker'
+    },
+    {
       text: 'CLI Tools',
       link: '/cli-tools'
     }
@@ -80,7 +84,7 @@ export const footer: FooterConfig = {
 }
 
 export const date: DateConfig = {
-  locales: 'en-US',
+  locales: 'fr-FR',
   options: {
     year: '2-digit',
     weekday: 'long',
