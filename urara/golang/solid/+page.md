@@ -67,10 +67,11 @@ In this tale, `Monolith` learned the importance of SRP, leading to a more organi
 
 ### The adventure of the extensible tavern
 
-In the land of *Codebase*, there was a renowned tavern where everyone would gather to share their heroic tales. The tavern, known as *The Logger Inn*, was famous for its ability to log tales of adventures and daily gossip.
-The innkeeper, a `stuct` named *Logger*, despite his best efforts, could only tell tales orally. The travellers were more and more in demand of scrolls, tapisseries, and other way to understand the tales. *Logger* was in bit of a pickle, as he was not equipped to deliver the stories in different formats.
+In the land of *Codebase*, there was a renowned tavern where everyone would gather to share their heroic tales. The tavern, known as *The Logger Inn*, was famous for its ability to log tales of adventures and daily gossip. The innkeeper, a `stuct` named *Logger*, despite his best efforts, could only tell tales orally. The travellers were more and more in demand of scrolls, tapisseries, and other way to understand the tales. *Logger* was in a bit of a pickle, as he was not equipped to deliver the stories in different formats.
+
 One day, a mysterious traveler, wearing the cloak of **Abstraction**, visited the inn. Understanding the innkeeper's dilemma, he introduced *Logger* to the **Open/Closed Principle**. **OCP**, a powerful enchantment, stated that entities should be open for extension but closed for modification. That meant *Logger* could use new story telling format without altering the core structure of the tavern.
-With the new enchantment, the tavern permitted the traveler to tell their stories to the innkeeper, who could save them in any format he wanted. The travellers then would be able to use the format they wanted, like stone, scroll, or even magical projection.
+With the new enchantment, the tavern permitted the traveler to tell their stories to the innkeeper, who could save them in any format he wanted. The travellers would then be able to use the format they wanted, like stone, scroll, or even magical projection.
+
 The village rejoiced as *The Logger Inn* became more popular than ever, serving as a testament to the flexibility and foresight provided by the **Open/Closed Principle**.
 
 ### Example
