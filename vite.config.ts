@@ -44,8 +44,25 @@ export default defineConfig({
       manifest: false,
       scope: '/',
       workbox: {
-        globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,webp,avif}'],
-        globIgnores: ['**/sw*', '**/workbox-*']
+        globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,jpg,webp,avif}'],
+        globIgnores: ['**/sw*', '**/workbox-*'],
+        runtimeCaching: [
+          {
+            urlPattern: /\/json\/.*/,
+            handler: 'StaleWhileRevalidate',
+            method: 'GET',
+            options: {
+              cacheName: 'json-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          }
+        ]
       }
     })
   ]
