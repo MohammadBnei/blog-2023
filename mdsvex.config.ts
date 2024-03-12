@@ -1,21 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-// mdsvex config type
-import type { MdsvexOptions } from 'mdsvex'
-
 // rehype plugins
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 
 // urara remark plugins
-import type { Node, Data } from 'unist'
 import { parse, join } from 'node:path'
 import { visit } from 'unist-util-visit'
 import { toString } from 'mdast-util-to-string'
 import Slugger from 'github-slugger'
 import remarkFFF from 'remark-fff'
 import remarkFootnotes from 'remark-footnotes'
+import relativeImages from 'mdsvex-relative-images'
 
 // highlighter
 import { escapeSvelte } from 'mdsvex'
@@ -24,41 +19,43 @@ import { renderCodeToHTML, runTwoSlash, createShikiHighlighter } from 'shiki-two
 
 const remarkUraraFm =
   () =>
-    (tree: Node<Data>, { data, filename }: { data: { fm?: Record<string, unknown> }; filename?: string }) => {
-      const filepath = filename ? filename.split('/src/routes')[1] : 'unknown'
-      const { dir, name } = parse(filepath)
-      if (!data.fm) data.fm = {}
-      // Generate slug & path
-      data.fm.slug = filepath
-      data.fm.path = join(dir, `/${name}`.replace('/+page', '').replace('.svelte', ''))
-      // Generate ToC
-      if (data.fm.toc !== false) {
-        const [slugs, toc]: [slugs: Slugger, toc: { depth: number; title: string; slug: string }[]] = [new Slugger(), []]
-        visit(tree, 'heading', (node: { depth: number }) => {
-          toc.push({
-            depth: node.depth,
-            title: toString(node),
-            slug: slugs.slug(toString(node), false)
-          })
+  (tree, { data, filename }) => {
+    const filepath = filename ? filename.split('/src/routes')[1] : 'unknown'
+    const { dir, name } = parse(filepath)
+    if (!data.fm) data.fm = {}
+    // Generate slug & path
+    data.fm.slug = filepath
+    data.fm.path = join(dir, `/${name}`.replace('/+page', '').replace('.svelte', ''))
+    // Generate ToC
+    if (data.fm.toc !== false) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const [slugs, toc] = [new Slugger(), [] as any[]]
+      visit(tree, 'heading', node => {
+        toc.push({
+          depth: node.depth,
+          title: toString(node),
+          slug: slugs.slug(toString(node), false)
         })
-        if (toc.length > 0) data.fm.toc = toc
-        else data.fm.toc = false
-      }
+      })
+      if (toc.length > 0) data.fm.toc = toc
+      else data.fm.toc = false
     }
+  }
 
 // Better type definitions needed
-const remarkUraraSpoiler = () => (tree: Node<Data>) =>
-  visit(tree, 'paragraph', (node: any) => {
+const remarkUraraSpoiler = () => tree =>
+  visit(tree, 'paragraph', node => {
     const { children } = node
     const text = children[0].value
     const re = /\|\|(.{1,}?)\|\|/g
     if (re.test(children[0].value)) {
       children[0].type = 'html'
-      children[0].value = text.replace(re, (_match: unknown, p1: string) => `<span class="spoiler">${p1}</span>`)
+      children[0].value = text.replace(re, (_match, p1) => `<span class="spoiler">${p1}</span>`)
     }
     return node
   })
 
+/** @type {import("mdsvex").MdsvexOptions} */
 export default {
   extensions: ['.svelte.md', '.md'],
   smartypants: {
@@ -69,18 +66,17 @@ export default {
   },
   highlight: {
     highlighter: async (code, lang, meta) => {
-      let fence: any
-      let twoslash: any
+      let fence, twoslash
       try {
         fence = parseFence(lex([lang, meta].filter(Boolean).join(' ')))
       } catch (error) {
         throw new Error(`Could not parse the codefence for this code sample \n${code}`)
       }
-      if (fence?.twoslash === true) twoslash = runTwoSlash(code, lang as string)
+      if (fence?.twoslash === true) twoslash = runTwoSlash(code, lang)
       return `{@html \`${escapeSvelte(
         renderCodeToHTML(
           code,
-          lang as string,
+          lang,
           fence ?? {},
           { themeName: 'material-default' },
           await createShikiHighlighter({ theme: 'material-default' }),
@@ -97,22 +93,23 @@ export default {
         target: 'mdsvex',
         autofill: {
           provider: 'fs',
-          path: (path: string) => path.replace('/src/routes/', '/urara/')
+          path: path => path.replace('/src/routes/', '/urara/')
         },
         strict: {
           media: {
             type: 'string',
-            array: false,
+            array: false
           }
         }
       }
     ],
     remarkUraraFm,
     remarkUraraSpoiler,
-    [remarkFootnotes, { inlineNotes: true }]
+    [remarkFootnotes, { inlineNotes: true }],
+    relativeImages
   ],
   rehypePlugins: [
-    rehypeSlug as any,
+    rehypeSlug,
     [rehypeAutolinkHeadings, { behavior: 'wrap' }],
     [
       rehypeExternalLinks,
@@ -122,6 +119,4 @@ export default {
       }
     ]
   ]
-} as MdsvexOptions
-
-/* eslint-enable @typescript-eslint/no-explicit-any */
+}

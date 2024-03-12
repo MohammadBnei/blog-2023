@@ -1,27 +1,33 @@
-// sveltekit config type
-import type { Config } from '@sveltejs/kit'
 // svelte adapter
-import adapterVercel from '@sveltejs/adapter-vercel'
-import adapterNetlify from '@sveltejs/adapter-netlify'
+import adapterAuto from '@sveltejs/adapter-auto'
+import adapterNode from '@sveltejs/adapter-node'
 import adapterStatic from '@sveltejs/adapter-static'
 // svelte preprocessor
 import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
-import { vitePreprocess } from '@sveltejs/kit/vite'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
+const adapter = {
+  auto: adapterAuto(),
+  node: adapterNode(),
+  static: adapterStatic({
+    pages: 'build',
+    assets: 'build',
+    fallback: undefined
+  })
+}
+
+/** @type {import("@svletejs/kit".Config)} */
 export default {
-  extensions: ['.svelte', ...(mdsvexConfig.extensions as string[])],
-  preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  preprocess: [mdsvex(mdsvexConfig as any), vitePreprocess()],
   kit: {
-    adapter: Object.keys(process.env).some(key => key === 'VERCEL')
-      ? adapterVercel()
-      : Object.keys(process.env).some(key => key === 'NETLIFY')
-      ? adapterNetlify()
-      : adapterStatic({
-          pages: 'build',
-          assets: 'build',
-          fallback: undefined
-        }),
+    adapter: process.env.ADAPTER
+      ? adapter[process.env.ADAPTER.toLowerCase()]
+      : Object.keys(process.env).some(key => ['VERCEL', 'NETLIFY'].includes(key))
+        ? adapter['auto']
+        : adapter['static'],
     prerender: {
       handleMissingId: 'warn'
     },
@@ -32,4 +38,4 @@ export default {
       }
     }
   }
-} as Config
+}
