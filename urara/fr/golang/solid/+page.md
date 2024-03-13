@@ -15,11 +15,11 @@ Cette série vise à expliquer simplement les tactiques d'implémentation des pr
 
 ### Le Conte du Struct Surmené
 
-Imaginez, dans un pays lointain appelé *Codebase*, un `struct` très zélé appelé *Monolith* qui gérait toutes les tâches du royaume. Il cuisait le pain pour tout le village, cousait les vêtements et forgeait les outils. Quand le village était petit, il accomplissait ses tâches difficilement mais à temps. À mesure que le village grandissait, et que la demande augmentait, *Monolith* se retrouvait dans un monde de douleur. Il ne pouvait tout simplement pas réfléchir, brûlant le pain, déchirant le tissu et fondant les outils.
+Imaginez, dans un pays lointain appelé *Codebase*, une `struct` très zélé appelé *Monolith* qui gérait toutes les tâches du royaume. Il cuisait le pain pour tout le village, cousait les vêtements et forgeait les outils. Quand le village était petit, il accomplissait ses tâches difficilement mais à temps. À mesure que le village grandissait, et que la demande augmentait, *Monolith* se retrouvait dans un monde de douleur. Il ne pouvait tout simplement pas réfléchir, brûlant le pain, déchirant le tissu et fondant les outils.
 
-Quand tout semblait perdu et que le village était au bord du chaos, un sauveur nommé *Refactor* vint et aida *Monolith*. Il lui présenta le **Single Responsibility Principle**, un sort très puissant qui dit à un `struct` de n'effectuer qu'un seul travail.
+Quand tout semblait perdu et que le village était au bord du chaos, un sauveur nommé *Refactor* vint et aida *Monolith*. Il lui présenta le **Single Responsibility Principle**, un sort très puissant qui dit à une `struct` de n'effectuer qu'une seule tâche.
 
-Beaucoup de nouveaux `structs` émergèrent des villageois, chacun expert dans son métier : *Baker Bob*, *Tailor Tess*, *Blacksmith Ben* et bien d'autres. À partir de ce moment, le village pouvait croître indéfiniment, chaque nouveau villageois apportant sa propre capacité au royaume. Mieux encore, lorsque les villageois demandaient du gâteau au lieu du pain, *Baker Bob* pouvait facilement changer sa routine de cuisson sans affecter *Tailor Tess* ou *Blacksmith Ben*.
+Beaucoup de nouvelles `structs` émergèrent des villageois, chacun expert dans son métier : *Baker Bob*, *Tailor Tess*, *Blacksmith Ben* et bien d'autres. À partir de ce moment, le village pouvait croître indéfiniment, chaque nouveau villageois apportant sa propre capacité au royaume. Mieux encore, lorsque les villageois demandaient du gâteau au lieu du pain, *Baker Bob* pouvait facilement changer sa routine de cuisson sans affecter *Tailor Tess* ou *Blacksmith Ben*.
 
 ### Exemple
 
@@ -59,7 +59,7 @@ func (d *DatabaseManager) ManageDatabase() {
 }
 ```
 
-Dans cette histoire, `Monolith` a appris l'importance du SRP, conduisant à un royaume de *Codebase* plus organisé et efficace.
+Dans cette histoire, `Monolith` apprit l'importance du SRP, conduisant à un royaume de *Codebase* plus efficace et organisé.
 
 ## Open/Closed Principle (OCP) (Principe Ouvert/Fermé)
 
@@ -67,11 +67,13 @@ Dans cette histoire, `Monolith` a appris l'importance du SRP, conduisant à un r
 
 ### L'aventure de la taverne extensible
 
-Dans le pays de *Codebase*, il y avait une taverne renommée où tout le monde se rassemblait pour partager leurs récits héroïques. La taverne, connue sous le nom de *The Logger Inn*, était célèbre pour sa capacité à enregistrer les contes d'aventures et les potins quotidiens.
-Le tavernier, un `struct` nommé *Logger*, malgré ses meilleurs efforts, ne pouvait raconter les contes qu'oralement. Les voyageurs étaient de plus en plus demandeurs de parchemins, de tapisseries et d'autres moyens de comprendre les contes. *Logger* était dans une impasse, car il n'était pas équipé pour livrer les histoires dans différents formats.
-Un jour, un voyageur mystérieux, portant la cape de **Abstraction**, visita l'auberge. Comprenant le dilemme du tavernier, il présenta à *Logger* le **Open/Closed Principle**. **OCP**, un enchantement puissant, stipulait que les entités devraient être ouvertes à l'extension mais fermées à la modification. Cela signifiait que *Logger* pouvait utiliser de nouveaux formats de narration sans altérer la structure principale de la taverne.
-Avec le nouvel enchantement, la taverne permettait au voyageur de raconter leurs histoires au tavernier, qui pouvait les sauvegarder dans n'importe quel format qu'il souhaitait. Les voyageurs pouvaient alors utiliser le format qu'ils voulaient, comme la pierre, le parchemin ou même la projection magique.
-Le village se réjouit car *The Logger Inn* devint plus populaire que jamais, servant de témoignage à la flexibilité et à la prévoyance fournies par le **Open/Closed Principle**.
+Dans le pays de *Codebase*, il y avait une taverne renommée où tout le monde se rassemblait pour partager ses récits héroïques. La taverne, connue sous le nom de *The Logger Inn*, était célèbre pour sa capacité à enregistrer les contes d'aventures et les potins quotidiens.
+
+Le tavernier, une `struct` nommé *Logger*, malgré ses meilleurs efforts, ne pouvait raconter les contes qu'oralement. Les voyageurs étaient de plus en plus demandeurs de parchemins, de tapisseries et d'autres moyens de comprendre les contes. *Logger* était dans une impasse, car il n'était pas équipé pour livrer les histoires dans différents formats.
+
+Un jour, un voyageur mystérieux, portant la cape d'**Abstraction**, visita l'auberge. Comprenant le dilemme du tavernier, il présenta à *Logger* le **Open/Closed Principle**. **OCP**, un enchantement puissant, stipulait que les entités devraient être ouvertes à l'extension mais fermées à la modification. Cela signifiait que *Logger* pouvait utiliser de nouveaux formats de narration sans altérer la structure principale de la taverne.
+
+Avec ce nouvel enchantement, la taverne permettait au voyageur de raconter leurs histoires au tavernier, qui pouvait les traiter dans le format qu'il souhaitait. Le village se réjouit car *The Logger Inn* devint plus populaire que jamais, servant de témoignage à la flexibilité et à la prévoyance fournies par le **Open/Closed Principle**.
 
 ### Exemple
 
@@ -128,13 +130,13 @@ Dans cette aventure, *The Logger Inn* a appris à embrasser le changement et à 
 
 ### La Parabole du Changeur de Forme
 
-*Codebase* abritait une guilde très spéciale : la *guilde des Formes*. Chaque forme avait un pouvoir unique, mais elles coexistaient toutes en harmonie et unité sous leur sage et abstrait gourou, *Shape*. Chaque membre de la guilde devait lui adhérer, permettant à des formes comme *Rectangle* et *Square* de vivre en paix sous la même réalité.
+*Codebase* abritait une guilde très spéciale : la *guilde des Formes*. Chaque forme avait un pouvoir unique, mais elles coexistaient toutes en harmonie et unies sous leur sage et abstrait gourou, *Shape*. Chaque membre de la guilde devait lui adhérer, permettant à des formes comme *Rectangle* et *Square* de vivre en paix dans la même réalité.
 
-Cependant, des troubles surgirent lorsque *Square*, poussé par son ego, tenta d'hériter de la forme de *Rectangle*. Au début, cela semblait normal, car ne sont pas tous les carrés des rectangles par nature ? Mais lorsque *Square* tenta de changer la longueur de son côté indépendamment l'un de l'autre, le tissu même de la réalité ne pouvait supporter cette blasphème.
+Cependant, des troubles surgirent lorsque *Square*, poussé par son ego, tenta d'hériter de la forme de *Rectangle*. Au début, cela semblait normal, car les carrés ne sont-ils pas des rectangles par nature ? Mais lorsque *Square* tenta de changer la longueur d'un de ses côté indépendamment l'un de l'autre, le tissu même de la réalité ne pouvait supporter cette blasphème.
 
-*Shape* chercha la guidance de son prédécesseur, *Liskov*, l'entité la plus sage et la plus intelligente de tout *Codebase*. Il proposa un principe, appelé depuis le **Liskov Substitution Principle (LSP)**, à la guilde. Cette règle stipulait que les entités d'une superclasse devraient être remplaçables par des entités d'une sous-classe sans affecter le tissu de la réalité.
+*Shape* chercha la guidance de son prédécesseur, *Liskov*, l'entité la plus sage et la plus intelligente de tout *Codebase*. Il proposa un principe, appelé depuis le **Liskov Substitution Principle (LSP)**, à la guilde. Cette règle stipulait que les entités d'une superclasse devaient être remplaçables par les entités d'une sous-classe sans affecter le tissu de la réalité.
 
-*Square* et *Rectangle* réalisèrent la puissance derrière les mots de *Liskov*, et décidèrent qu'ils ne devraient jamais prétendre être l'un l'autre. Au lieu de cela, ils trouvèrent un terrain d'entente, une essence plus abstraite qu'ils pourraient partager sans sacrifier l'équilibre de la réalité. Ainsi, *Polygon* naquit. La paix et l'ordre furent restaurés dans *Codebase*, grâce au **LSP**.
+*Square* et *Rectangle* réalisèrent la puissance derrière les mots de *Liskov*, et décidèrent que l'un ne devaient jamais prétendre être l'autre. Au lieu de cela, ils trouvèrent un terrain d'entente, une essence plus abstraite qu'ils pourraient partager sans sacrifier l'équilibre de la réalité. Ainsi, *Polygon* naquit. La paix et l'ordre furent restaurés dans *Codebase*, grâce au **LSP**.
 
 ### Exemple
 
