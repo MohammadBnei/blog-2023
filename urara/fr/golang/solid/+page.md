@@ -15,7 +15,7 @@ Cette série vise à expliquer simplement les tactiques d'implémentation des pr
 
 ### Le Conte du Struct Surmené
 
-Imaginez, dans un pays lointain appelé *Codebase*, une `struct` très zélé appelé *Monolith* qui gérait toutes les tâches du royaume. Il cuisait le pain pour tout le village, cousait les vêtements et forgeait les outils. Quand le village était petit, il accomplissait ses tâches difficilement mais à temps. À mesure que le village grandissait, et que la demande augmentait, *Monolith* se retrouvait dans un monde de douleur. Il ne pouvait tout simplement pas réfléchir, brûlant le pain, déchirant le tissu et fondant les outils.
+Imaginez, dans un pays lointain appelé *Codebase*, une `struct` très zélée appelée *Monolith* qui gérait toutes les tâches du royaume. Elle cuisait le pain pour tout le village, cousait les vêtements et forgeait les outils. Quand le village était petit, elle accomplissait ses tâches difficilement mais à temps. À mesure que le village grandissait, et que la demande augmentait, *Monolith* se retrouvait dans un monde de douleur. Elle ne pouvait tout simplement pas réfléchir, brûlant le pain, déchirant le tissu et fondant les outils.
 
 Quand tout semblait perdu et que le village était au bord du chaos, un sauveur nommé *Refactor* vint et aida *Monolith*. Il lui présenta le **Single Responsibility Principle**, un sort très puissant qui dit à une `struct` de n'effectuer qu'une seule tâche.
 
@@ -132,7 +132,7 @@ Dans cette aventure, *The Logger Inn* a appris à embrasser le changement et à 
 
 *Codebase* abritait une guilde très spéciale : la *guilde des Formes*. Chaque forme avait un pouvoir unique, mais elles coexistaient toutes en harmonie et unies sous leur sage et abstrait gourou, *Shape*. Chaque membre de la guilde devait lui adhérer, permettant à des formes comme *Rectangle* et *Square* de vivre en paix dans la même réalité.
 
-Cependant, des troubles surgirent lorsque *Square*, poussé par son ego, tenta d'hériter de la forme de *Rectangle*. Au début, cela semblait normal, car les carrés ne sont-ils pas des rectangles par nature ? Mais lorsque *Square* tenta de changer la longueur d'un de ses côté indépendamment l'un de l'autre, le tissu même de la réalité ne pouvait supporter cette blasphème.
+Cependant, des troubles surgirent lorsque *Square*, poussé par son ego, tenta d'hériter de la forme de *Rectangle*. Au début, cela semblait normal, car les carrés ne sont-ils pas des rectangles par nature ? Mais lorsque *Square* tenta de changer la longueur d'un de ses côté indépendamment l'un de l'autre, le tissu même de la réalité ne pouvait supporter ce blasphème.
 
 *Shape* chercha la guidance de son prédécesseur, *Liskov*, l'entité la plus sage et la plus intelligente de tout *Codebase*. Il proposa un principe, appelé depuis le **Liskov Substitution Principle (LSP)**, à la guilde. Cette règle stipulait que les entités d'une superclasse devaient être remplaçables par les entités d'une sous-classe sans affecter le tissu de la réalité.
 
@@ -194,7 +194,7 @@ Dans cette parabole, la guilde des formes a appris l'importance du **Liskov Subs
 
 Dans le vaste et varié paysage de *Codebase*, vivait un voyageur nommé *MultiTool*. *MultiTool* était renommé pour sa polyvalence, il pouvait faire tout ce que quiconque lui demandait. Il disposait d'un éventail de fonctions pour aider dans toute situation imaginable, de l'ouverture de bouteilles à l'envoi de messages à travers les dimensions, *MultiTool* pouvait tout faire. Mais il y avait un coût à la polyvalence de *MultiTool* : chaque outil qu'il devait porter le ralentissait, le rendant de plus en plus lent, et il savait qu'il faisait face à une mort statique s'il poursuivait son chemin sous cette forme.
 
-*Ivy*, un artisan sage de *Codebase*, vit le voyageur surmené entrer dans son village. Il conseilla à *MultiTool* d'utiliser une technique très puissante, appelée le **Interface Segregation Principle (ISP)**. Ce principe suggérait qu'aucun client ne devrait être forcé de dépendre de méthodes qu'il n'utilise pas. En essence, il valait mieux avoir de nombreuses interfaces plus petites et ciblées (outils) qu'une seule grande interface fourre-tout.
+*Ivy*, un artisan sage de *Codebase*, vit le voyageur surmené entrer dans son village. Il conseilla à *MultiTool* d'utiliser une technique très puissante, appelée le **Interface Segregation Principle (ISP)**. Ce principe suggérait qu'aucun client ne devrait être forcé de dépendre de méthodes qu'il n'utilise pas. En essence, il valait mieux avoir de nombreuses interfaces (outils) plus petites et ciblées  qu'une seule grande interface fourre-tout.
 
 Avec les conseils d'*Ivy*, *MultiTool* fut réimaginé en une collection d'outils spécialisés, chacun servant un but spécifique et distinct. *BottleOpener*, *MessageSender*, *FireStarter* naquirent. Ils parcouraient chacun le pays avec une vitesse immensément plus grande, répondant aux besoins de chaque habitant de *Codebase*.
 
@@ -270,11 +270,11 @@ Dans les vallées verdoyantes de *Codebase*, existait un village renommé pour s
 
 Au cœur des problèmes du village se trouvait la Grande Salle, une structure magnifique qui dépendait fortement de la Carrière de Pierre pour ses matériaux. Les bâtisseurs de la Grande Salle avaient directement entrelacé sa structure avec le fonctionnement de la Carrière de Pierre, rendant tout changement dans la carrière une catastrophe potentielle pour la stabilité de la salle.
 
-Voyant la situation précaire, une architecte sage nommée *Dianne* introduisit les villageois au **Dependency Inversion Principle (DIP)**. **DIP**, un principe aussi profond que les mines les plus profondes, stipulait que les modules de haut niveau ne devraient pas dépendre des modules de bas niveau, mais les deux devraient dépendre des abstractions. De plus, les abstractions ne devraient pas dépendre des détails, mais les détails devraient dépendre des abstractions.
+Voyant la situation précaire, une architecte sage nommée *Dianne* introduisit les villageois au **Dependency Inversion Principle (DIP)**. **DIP** stipulait que les modules de haut niveau ne devraient pas dépendre des modules de bas niveau, mais que les deux devraient dépendre des abstractions. De plus, les abstractions ne devraient pas dépendre des détails, mais les détails devraient dépendre des abstractions.
 
 Inspirés par la sagesse de *Dianne*, les villageois se mirent à redéfinir leur approche. Ils introduisirent une interface, `MaterialSupplier`, une abstraction qui définissait les méthodes pour fournir des matériaux sans spécifier la source. La Grande Salle et la Carrière de Pierre furent alors adaptées pour dépendre de cette interface, déliant leur relation directe et permettant une plus grande flexibilité et résilience face au changement.
 
-En conséquence, *Modularville* prospéra comme jamais auparavant. La Grande Salle se dressait fière et fière, n'étant plus à la merci des fluctuations de la Carrière de Pierre. Les villageois apprirent à embrasser le changement, confiants dans le savoir que leurs structures étaient construites sur la solide fondation de l'abstraction.
+En conséquence, *Modularville* prospéra comme jamais auparavant. La Grande Salle se dressait fière, n'étant plus à la merci des fluctuations de la Carrière de Pierre. Les villageois apprirent à embrasser le changement, confiants dans le fait que leurs structures étaient construites sur la solide fondation de l'abstraction.
 
 ### Exemple
 
@@ -325,4 +325,4 @@ Dans la saga de *Modularville*, le Dependency Inversion Principle a illuminé le
 
 ## Conclusion
 
-L'application de ces principes ne devrait pas être systématique et directe. Le développeur doit comprendre chacune de leur utilité, à côté de leur risque potentiel. Le développeur est responsable de l'efficacité et de la fonctionnalité de son application, et ces principes aident à rationaliser le processus de l'étape architecturale de la base de code, et fournissent une structure mentale claire pour la vie de l'application.
+L'application de ces principes ne devrait pas être systématique et directe. Le développeur doit comprendre chacune de leur utilité, à côté de leurs risques potentiels. Le développeur est responsable de l'efficacité et de la fonctionnalité de son application, et ces principes aident à rationaliser le processus de l'étape architecturale de la base de code, et fournissent une structure mentale claire pour la vie de l'application.
