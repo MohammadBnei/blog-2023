@@ -50,6 +50,10 @@ Docker Engine
 
 Avant Docker, la norme était d'utiliser des machines virtuelles qui incluraient non seulement l'application et ses dépendances, mais aussi tout le système d'exploitation invité - pour chaque application. Cela entraîne une augmentation de l'utilisation des ressources, un démarrage lent et une inefficacité globale. L'approche de Docker consistant à empaqueter uniquement le code de l'application et ses dépendances dans des conteneurs partageant le système d'exploitation de l'hôte est beaucoup plus efficace et efficient.
 
+## Exercice d'introduction au cli (en anglais)
+
+[CLI introduction](./cli)
+
 ## Cours
 
 ### Layers

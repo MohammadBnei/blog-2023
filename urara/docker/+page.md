@@ -48,6 +48,10 @@ Docker Engine
 
 Before Docker, the standard was to use virtual machines which would include not just the application and dependencies, but also an entire guest OS—for each application. This leads to increased resource usage, slow start times, and overall inefficiency. The Docker approach of packaging just the application code and dependencies into containers that share the host OS is far more efficient and effective.
 
+## Introduction cli exercises
+
+[CLI introduction](./cli)
+
 ## Courses
 
 ### Layers
