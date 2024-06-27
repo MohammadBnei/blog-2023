@@ -53,7 +53,7 @@ tags:
 9. **Build Docker Image:**
    - Create a Dockerfile with an application. Build a Docker image from that Dockerfile. 
 
-    ```console
+    ```bash
     touch Dockerfile
     # Write your application into Dockerfile
     docker build -t myapp .
@@ -62,7 +62,7 @@ tags:
 10. **Push Docker Image:**
     - Login to DockerHub, tag the image and push your Docker image to Docker Hub. Change `username`, `image_name` and `image_id` with your DockerHub username, desired image name and ID of the created image.
 
-    ```console
+    ```bash
     docker login 
     docker tag image_id username/image_name
     docker push username/image_name 
