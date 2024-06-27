@@ -14,9 +14,9 @@ Docker is an open-source platform that enables developers to automate the deploy
 ## Purpose of Docker
 The main purpose of Docker is to simplify the process of managing application processes in a container. With Docker, it’s easy to package an application with all its dependencies into a standardized unit for software development. It improves the collaboration between developers and system administrators, while reducing the deployment time.
 
-## How Docker Works: Conceptual Layers
+## How Docker Works
 
-1. __Layer 1: Docker Engine__
+1. __Docker Engine__
 The Docker engine is the host runtime that builds and runs the containers. It's the underlying technology that powers Docker. Docker engine consists of three main components: 
 
     - __Docker Daemon (dockerd)__: Listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes.
@@ -25,13 +25,13 @@ The Docker engine is the host runtime that builds and runs the containers. It's 
 
     - __Docker REST API__: An API used by applications to interact with Docker daemon.
 
-1. __Layer 2: Images__
+1. __Images__
 A Docker image is a lightweight, stand-alone, and executable software package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files. Images are constructed from layered Dockerfiles, which are templates with instructions on building the Docker image.
 
-1. __Layer 3: Containers__
+1. __Containers__
 A Docker container is a runtime instance of an image—what the image becomes in memory when executed. Since the image contains the application code, runtime, libraries, and environment variables, the container has everything it needs to run the application. 
 
-1. __Layer 4: Registry/Docker Hub__
+1. __Registry/Docker Hub__
 Docker images are stored in a Docker registry. Docker Hub, the default public registry, allows you to store and distribute Docker images. It includes both public and private image repositories. 
 
 Here's a visual of how they're related:
