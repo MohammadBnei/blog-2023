@@ -18,7 +18,7 @@ L'objectif principal de Docker est de simplifier le processus de gestion des pro
 
 ## Comment fonctionne Docker: Couches conceptuelles
 
-1. __Couche 1: Docker Engine__\
+1. __Couche 1: Docker Engine__
 La Docker Engine est l'hôte d'exécution qui construit et exécute les conteneurs. C'est la technologie sous-jacente qui alimente Docker. Docker engine se compose de trois principaux composants:
 
     - __Docker Daemon (dockerd)__: Écoute les demandes de l'API Docker et gère les objets Docker tels que les images, les conteneurs, les réseaux et les volumes.
@@ -27,13 +27,13 @@ La Docker Engine est l'hôte d'exécution qui construit et exécute les conteneu
 
     - __Docker REST API__: Un API utilisé par les applications pour interagir avec le daemon Docker.
 
-2. __Couche 2: Docker Images__\
+2. __Couche 2: Images__
 Une image Docker est un logiciel léger, autonome et exécutable qui comprend tout le nécessaire pour s'exécuter, y compris le code, l'environnement, les bibliothèques, les variables d'environnement et les fichiers de configuration. Les images sont construites à partir de Dockerfiles en **layers**, qui sont des couches d'instructions pour la construction de l'image Docker.
 
-1. __Couche 3: Docker Containers__\
+1. __Couche 3: Containers__
 Un conteneur Docker est une instance d'exécution d'une image - ce que l'image devient en mémoire lorsqu'elle est exécutée. Puisque l'image contient le code de l'application, l'environnement d'exécution, les bibliothèques et les variables d'environnement, le conteneur a tout ce dont il a besoin pour exécuter l'application.
 
-1. __Couche 4: Docker Registry/Docker Hub__\
+1. __Couche 4: Registry/Docker Hub__
 Les images Docker sont stockées dans un **registry** Docker. Docker Hub, le registre public par défaut, vous permet de stocker et de distribuer des images Docker. Il comprend des repositories d'images publiques et privées.
 
 Voici une visualisation de leur relation:

@@ -16,7 +16,7 @@ The main purpose of Docker is to simplify the process of managing application pr
 
 ## How Docker Works: Conceptual Layers
 
-1. __Layer 1: Docker Engine__\
+1. __Layer 1: Docker Engine__
 The Docker engine is the host runtime that builds and runs the containers. It's the underlying technology that powers Docker. Docker engine consists of three main components: 
 
     - __Docker Daemon (dockerd)__: Listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes.
@@ -25,13 +25,13 @@ The Docker engine is the host runtime that builds and runs the containers. It's 
 
     - __Docker REST API__: An API used by applications to interact with Docker daemon.
 
-2. __Layer 2: Docker Images__\
+1. __Layer 2: Images__
 A Docker image is a lightweight, stand-alone, and executable software package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files. Images are constructed from layered Dockerfiles, which are templates with instructions on building the Docker image.
 
-3. __Layer 3: Docker Containers__\
+1. __Layer 3: Containers__
 A Docker container is a runtime instance of an image—what the image becomes in memory when executed. Since the image contains the application code, runtime, libraries, and environment variables, the container has everything it needs to run the application. 
 
-4. __Layer 4: Docker Registry/Docker Hub__\
+1. __Layer 4: Registry/Docker Hub__
 Docker images are stored in a Docker registry. Docker Hub, the default public registry, allows you to store and distribute Docker images. It includes both public and private image repositories. 
 
 Here's a visual of how they're related:
