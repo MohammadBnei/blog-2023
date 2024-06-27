@@ -20,10 +20,16 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
       - name: release-it
         run: |
-          git pull
-          npm install --no-save --force release-it @release-it/conventional-changelog
-          npm run release
+          mv package.json tmp.package.json
+          bun install @release-it/conventional-changelog
+          mv tmp.package.json package.json 
+          bun run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
