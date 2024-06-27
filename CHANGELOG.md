@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/MohammadBnei/blog-2023/compare/0.1.0...0.1.1) (2024-06-27)
+
+
+### Bug Fixes
+
+* **docker:** fixed no formatting scripts in cli exercises ([7781e05](https://github.com/MohammadBnei/blog-2023/commit/7781e05c8dd8736f3bbf2f8cfc4a1396e5a30fac))
+
 # 0.1.0 (2024-06-27)
 
 
