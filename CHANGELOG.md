@@ -1,5 +1,12 @@
 
 
+## [0.1.2](https://github.com/MohammadBnei/blog-2023/compare/0.1.1...0.1.2) (2024-06-27)
+
+
+### Bug Fixes
+
+* **docker:** reprhasing pompuous titles ([6a6e226](https://github.com/MohammadBnei/blog-2023/commit/6a6e226e225626f283bb92bee497bd5997bd7f8e))
+
 ## [0.1.1](https://github.com/MohammadBnei/blog-2023/compare/0.1.0...0.1.1) (2024-06-27)
 
 
