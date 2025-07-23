@@ -1,4 +1,6 @@
+# Changelog
 
+## [0.1.3](https://github.com/MohammadBnei/blog-2023/compare/0.1.2...0.1.3) (2025-07-23)
 
 ## [0.1.2](https://github.com/MohammadBnei/blog-2023/compare/0.1.1...0.1.2) (2024-06-27)
 
